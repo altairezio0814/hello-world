@@ -1,13 +1,18 @@
-﻿using System;
+//Here I have just used some examples to have a basic idea about attributes and methods accesibility in C#
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Namespace Main
 namespace Main
-{
+{  
+    //Inheriting Aritra class from namespace Aritra
     class Program : Aritra.Aritra
     {
+        //Have to use this as the superclass Aritra has a parameterised constructor.
+        //So while creating an object of a subclass, it is important to call the superclass constructor.
         public Program(string name, int age) : base(name, age)
         {
         }
@@ -25,6 +30,8 @@ namespace Main
             Aritra.Another another = new Aritra.Another();
             another.setAnother("Another", 22);
             another.display();
+            Program prog = new Program("Raktim", 22);
+            prog.displayDetails();
             Console.ReadKey();
         }
     }
